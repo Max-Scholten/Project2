@@ -1,8 +1,8 @@
 <?php
 // Database connection parameters
-    private $dataSource = "mysql:dbname=politiek;host=localhost;"; //Hier dient je connection string te komen mysql:dbname=;host=;
+    private $dataSource = "mysql:dbname=stemwijzer;host=localhost;"; //Hier dient je connection string te komen mysql:dbname=;host=;
     private $username = "root";
-    private $password = "WBNImzW8v86iFNy!SSIi8DkAmoJVoZDZvie9yAtvFKAgM$kM#XB$eB4Awjl0NT0V6W!cOqsbyeHkYcEUEJjl$@2";
+    private $password = "";
 
 // Create a connection to the database
 //$conn = new mysqli($localhost, $username, $password, $database);
