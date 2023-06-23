@@ -43,7 +43,7 @@ header{
     grid-column: 2 / 3;
     grid-row: 1 / 3;
     margin-top: 150px;
-    margin-left: 300px;
+    margin-left: 350px;
     padding-top: 10px;
    
 
@@ -70,10 +70,19 @@ form{
     border-radius: 35px;
     grid-column: 2 / 3;
     grid-row: 3 / 4;
-    margin-left: 200px;
+    margin-left: 250px;
     padding-top: 55px;
     padding-left: 55px;
     padding-right: 55px;
+
+}
+
+#txt{
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-top: 45px;
 
 }
 
