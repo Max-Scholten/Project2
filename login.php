@@ -60,14 +60,14 @@ $conn = null;
 <html>
 
 <head>
-    <title>Login</title>
+    <title>Home</title>
 
     <link rel="stylesheet" href="../Project2/css/login.css">
 
 </head>
 
 <body>
-    <header>Login</header>
+    <header>Home</header>
     <?php if (isset($errorMessage)) : ?>
         <p><?php echo $errorMessage; ?></p>
     <?php endif; ?>
