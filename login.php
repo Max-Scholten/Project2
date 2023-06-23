@@ -3,8 +3,6 @@ session_start();
 
 
 
-$userId = $_SESSION['userId'];
-
 $hostname = 'localhost';
 $username = 'root';
 $password = '';
