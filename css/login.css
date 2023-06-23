@@ -29,6 +29,7 @@ header{
     color: white;
     padding-top: 13px;
     height: 55px;
+    border: solid rgb(41, 21, 74) 5px;
 }
 
 #formi{
@@ -89,4 +90,5 @@ footer{
     grid-area: footer;
     background-color: #0D4074;
     height: 10vh;
+    border: solid rgb(41, 21, 74) 5px;
 }
