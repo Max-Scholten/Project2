@@ -4,15 +4,16 @@ body{
     padding: 0px;
     background-color: rgb(240, 240, 240);
     background-image: url(../afb/2560x1440a.jpg);
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: grid;
-    grid-template-columns: 2fr 2fr;
+
     grid-template-areas: 
-    "header header"
-    "formi formi"
-    "footer footer";
+    "header header header"
+    "formi formi formi"
+    "tekst tekst tekst"
+    "footer footer footer";
     grid-template-rows: 2fr 2fr;
     column-gap: 7px;
     row-gap: 25px;
@@ -22,12 +23,42 @@ body{
 header{
     grid-area: header;
     background-color: #0D4074;
-    
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    padding-top: 13px;
+    height: 55px;
 }
 
 #formi{
     grid-area: formi;
+    border: solid rgb(41, 21, 74) 5px;
+    height: 40vh;
+    width: 40vw;
+    border-radius: 35px;
     background-color: #0D4074;
+    color: white;
+    text-align: center;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
+}
+
+form{
+    padding-top: 125px;
+}
+
+#tekst{
+    grid-area: tekst;
+    background-color: rgb(190, 190, 190);
+    height: 40vh;
+    width: 40vw;
+    border: solid rgb(41, 21, 74) 5px;
+    border-radius: 35px;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+
 }
 
 footer{

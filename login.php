@@ -68,8 +68,6 @@ $conn = null;
 
 <body>
     <header>Login</header>
-
-    <h2>Login</h2>
     <?php if (isset($errorMessage)) : ?>
         <p><?php echo $errorMessage; ?></p>
     <?php endif; ?>
@@ -79,6 +77,7 @@ $conn = null;
     <div id="formi">
 
         <form method="POST" action="">
+            <h2>Login</h2>
             <div>
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -94,7 +93,12 @@ $conn = null;
         </form>
     </div>
 
-    
+    <div id="tekst">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui similique consequuntur recusandae quod veniam doloribus facere, voluptatum, laboriosam, sunt nemo provident odio esse mollitia molestiae dolorem itaque soluta nostrum nihil!</p>
+    </div>
+
+
 </body>
 <footer></footer>
+
 </html>
