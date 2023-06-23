@@ -56,8 +56,9 @@ $conn = null;
 </head>
 <body>
     <h2>Results</h2>
-    <p>Username: <?php echo $_SESSION['userId']; ?></p>
-    <p>Total Points: <?php echo $totalPoints; ?></p>
+    <p>Username: <?php echo $_SESSION['username']; ?></p>
+    <p>Total Points: <?php echo $totalPoints; var_dump($totalPoints);?></p>
+    
     <p>Your Political Leaning: <?php if ($totalPoints <= 5) : ?>
         <p>Based on your points, we recommend you vote for D66.</p>
     <?php elseif ($totalPoints >= 6 && $totalPoints <= 10) : ?>
