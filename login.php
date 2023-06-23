@@ -65,6 +65,8 @@ $conn = null;
 
 </head>
 <body>
+    <header>Login</header>
+
     <h2>Login</h2>
     <?php if (isset($errorMessage)) : ?>
         <p><?php echo $errorMessage; ?></p>
