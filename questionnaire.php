@@ -49,7 +49,7 @@ $conn = null;
     <link rel="stylesheet" href="../Project2/css/question.css">
 </head>
 <body>
-    <h2>Questionnaire</h2>
+    <header>Questionnaire</header>
     <form method="POST" action="">
         <?php foreach ($questions as $question) : ?>
             <div>

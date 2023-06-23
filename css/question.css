@@ -1,6 +1,25 @@
 *
 
 body{
-    background-color: pink;
+    margin: 0px;
+    padding: 0px;
+    display: grid;
+    background-color: rgb(240, 240, 240);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    align-items: center;
+    grid-template-areas: 
+    "header header"
+    "formi formi"
+    "footer footer";
+    grid-template-rows: 2fr 2fr;
+
+}
+header{
+    font-size: 30px;
+    color: white;
+    grid-area: header;
+    background-color: #0D4074;
+    padding-top: 13px;
+    height: 55px;
+    text-align: center;
 }
