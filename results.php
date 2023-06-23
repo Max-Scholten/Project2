@@ -38,6 +38,7 @@ $conn = null;
 <html>
 <head>
     <title>Results</title>
+    <link rel="stylesheet" href="../Project2/css/results.css">
 </head>
 <body>
     <h2>Results</h2>
