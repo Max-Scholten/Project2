@@ -20,11 +20,11 @@ try {
     die("Connection failed: " . $e->getMessage());
 }
 
-$stmt = $conn->prepare("SELECT parties.name, SUM(userquestions.agrees) AS score
+$stmt = $conn->prepare("SELECT parties.name, COUNT(*) AS score
         FROM parties
         INNER JOIN partyquestions ON parties.partyId = partyquestions.partyId
         INNER JOIN userquestions ON partyquestions.questionId = userquestions.questionId
-        WHERE userquestions.userId = :userId
+        WHERE userquestions.userId = :userId AND userquestions.agrees = 1
         GROUP BY parties.partyId
         ORDER BY score DESC");
 $stmt->bindParam(':userId', $userId);
@@ -41,10 +41,11 @@ foreach ($parties as $party) {
         $userParty = 'None'; // User has equal points with multiple parties
     }
 
-    $totalPoints += $party['score'];
+    $totalPoints += 1; // Count only one point for each "Yes" answer
 }
 
 $conn = null;
+
 ?>
 
 <!DOCTYPE html>
@@ -57,22 +58,14 @@ $conn = null;
     <h2>Results</h2>
     <p>Username: <?php echo $_SESSION['username']; ?></p>
     <p>Total Points: <?php echo $totalPoints; ?></p>
-    <p>Your Political Leaning: <?php echo ($userParty === 'None') ? 'Indeterminate' : $userParty; ?></p>
+    <p>Your Political Leaning: <?php if ($totalPoints <= 5) : ?>
+        <p>Based on your points, we recommend you vote for D66.</p>
+    <?php elseif ($totalPoints >= 6 && $totalPoints <= 10) : ?>
+        <p>Based on your points, we recommend you vote for <?php echo ($userParty === 'VVD') ? 'VVD' : 'SP'; ?>.</p>
+    <?php endif; ?></p>
 
-    <?php if ($userParty === 'None') : ?>
-        <p>Since you have equal points with multiple parties, please answer the following question to determine your political leaning:</p>
-        <form method="POST" action="questionnaire.php">
-            <div>
-                <p>Additional Question:</p>
-                <input type="radio" id="yes" name="additionalQuestion" value="yes" required>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="additionalQuestion" value="no" required>
-                <label for="no">No</label>
-            </div>
-            <div>
-                <button type="submit">Submit</button>
-            </div>
-        </form>
-    <?php endif; ?>
+   
+
+    <a href="login.php">Log In</a>
 </body>
 </html>
