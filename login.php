@@ -58,33 +58,47 @@ $conn = null;
 
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Login</title>
+    <title>Home</title>
 
     <link rel="stylesheet" href="../Project2/css/login.css">
 
 </head>
+
 <body>
-    <h2>Login</h2>
+    <header>Home</header>
     <?php if (isset($errorMessage)) : ?>
         <p><?php echo $errorMessage; ?></p>
     <?php endif; ?>
     <?php if (isset($successMessage)) : ?>
         <p><?php echo $successMessage; ?></p>
     <?php endif; ?>
-    <form method="POST" action="">
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-        </div>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <div>
-            <button type="submit" name="login">Login</button>
-            <button type="submit" name="register">Register</button>
-        </div>
-    </form>
+    <div id="formi">
+
+        <form method="POST" action="">
+            <h2>Login</h2>
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <button type="submit" name="login">Login</button>
+                <button type="submit" name="register">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="tekst">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui similique consequuntur recusandae quod veniam doloribus facere, voluptatum, laboriosam, sunt nemo provident odio esse mollitia molestiae dolorem itaque soluta nostrum nihil!</p>
+    </div>
+
+
 </body>
+<footer></footer>
+
 </html>

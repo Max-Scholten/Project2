@@ -68,4 +68,5 @@ $conn = null;
 
     <a href="login.php">Log In</a>
 </body>
+<footer></footer>
 </html>
