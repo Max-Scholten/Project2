@@ -48,7 +48,7 @@ $conn->close();
 <html>
 <head>
     <title>Login</title>
-    <link type="stylesheet" href="../Project2/login.css">
+    <link type="stylesheet" href="../Project2/css/login.css">
 </head>
 <body>
     <h2>Login</h2>
