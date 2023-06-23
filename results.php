@@ -31,6 +31,19 @@ $stmt->bindParam(':userId', $userId);
 $stmt->execute();
 $parties = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+$totalPoints = 0;
+$userParty = '';
+
+foreach ($parties as $party) {
+    if ($userParty === '') {
+        $userParty = $party['name'];
+    } elseif ($party['score'] === $totalPoints) {
+        $userParty = 'None'; // User has equal points with multiple parties
+    }
+
+    $totalPoints += $party['score'];
+}
+
 $conn = null;
 ?>
 
@@ -42,25 +55,24 @@ $conn = null;
 </head>
 <body>
     <h2>Results</h2>
-    <?php if (!empty($parties)) : ?>
-        <table>
-            <thead>
-                <tr>
-                    <th>Party</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($parties as $party) : ?>
-                    <tr>
-                        <td><?php echo $party['name']; ?></td>
-                        <td><?php echo $party['score']; ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    <?php else : ?>
-        <p>No parties found.</p>
+    <p>Username: <?php echo $_SESSION['username']; ?></p>
+    <p>Total Points: <?php echo $totalPoints; ?></p>
+    <p>Your Political Leaning: <?php echo ($userParty === 'None') ? 'Indeterminate' : $userParty; ?></p>
+
+    <?php if ($userParty === 'None') : ?>
+        <p>Since you have equal points with multiple parties, please answer the following question to determine your political leaning:</p>
+        <form method="POST" action="questionnaire.php">
+            <div>
+                <p>Additional Question:</p>
+                <input type="radio" id="yes" name="additionalQuestion" value="yes" required>
+                <label for="yes">Yes</label>
+                <input type="radio" id="no" name="additionalQuestion" value="no" required>
+                <label for="no">No</label>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
     <?php endif; ?>
 </body>
 </html>
