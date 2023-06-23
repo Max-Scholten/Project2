@@ -34,8 +34,8 @@ header{
 #formi{
     grid-area: formi;
     border: solid rgb(41, 21, 74) 5px;
-    height: 40vh;
-    width: 40vw;
+    min-height: 40vh;
+    width: 35vw;
     border-radius: 35px;
     background-color: #0D4074;
     color: white;
@@ -43,10 +43,10 @@ header{
     grid-column: 2 / 3;
     grid-row: 1 / 3;
     margin-top: 150px;
-    margin-left: 200px;
+    margin-left: 300px;
     padding-top: 10px;
-    padding-left: 55px;
-    padding-right: 55px;
+   
+
     padding-bottom: 55px;
 
 }
@@ -64,7 +64,7 @@ form{
     grid-area: tekst;
     background-color: rgb(190, 190, 190);
     text-align: center;
-    height: 40vh;
+    min-height: 40vh;
     width: 40vw;
     border: solid rgb(41, 21, 74) 5px;
     border-radius: 35px;
