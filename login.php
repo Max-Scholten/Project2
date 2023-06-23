@@ -1,27 +1,37 @@
 <?php
 session_start();
 
-$hostname = 'localhost'; // Change this to your database server hostname
-$username = 'root'; // Change this to your database username
-$password = ''; // Change this to your database password
-$database = 'stemwijzer'; // Change this to your database name
+if (!isset($_SESSION['userId'])) {
+    header("Location: login.php");
+    exit();
+}
 
-$conn = new mysqli($hostname, $username, $password, $database);
+$userId = $_SESSION['userId'];
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'stemwijzer';
+
+try {
+    $conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['login'])) {
         $username = $_POST['username'];
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
 
-        $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-        $result = $conn->query($sql);
+        $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);
+        $stmt->execute();
 
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
             $_SESSION['userId'] = $row['userId'];
             header("Location: questionnaire.php");
             exit();
@@ -30,25 +40,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } elseif (isset($_POST['register'])) {
         $username = $_POST['username'];
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
 
-        $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
-        if ($conn->query($sql) === true) {
+        $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);
+        if ($stmt->execute()) {
             $successMessage = "User registered successfully. Please login.";
         } else {
-            $errorMessage = "Error registering user: " . $conn->error;
+            $errorMessage = "Error registering user: " . $stmt->errorInfo()[2];
         }
     }
 }
 
-$conn->close();
+$conn = null;
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Login</title>
+
     <link rel="stylesheet" href="../Project2/css/login.css">
+
 </head>
 <body>
     <h2>Login</h2>

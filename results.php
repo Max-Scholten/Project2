@@ -8,34 +8,30 @@ if (!isset($_SESSION['userId'])) {
 
 $userId = $_SESSION['userId'];
 
-$hostname = 'localhost'; // Change this to your database server hostname
-$username = 'root'; // Change this to your database username
-$password = ''; // Change this to your database password
-$database = 'stemwijzer'; // Change this to your database name
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'stemwijzer';
 
-$conn = new mysqli($hostname, $username, $password, $database);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+try {
+    $conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
 }
 
-$sql = "SELECT parties.name, SUM(userquestions.agrees) AS score
+$stmt = $conn->prepare("SELECT parties.name, SUM(userquestions.agrees) AS score
         FROM parties
         INNER JOIN partyquestions ON parties.partyId = partyquestions.partyId
         INNER JOIN userquestions ON partyquestions.questionId = userquestions.questionId
-        WHERE userquestions.userId = $userId
+        WHERE userquestions.userId = :userId
         GROUP BY parties.partyId
-        ORDER BY score DESC";
-$result = $conn->query($sql);
-$parties = [];
+        ORDER BY score DESC");
+$stmt->bindParam(':userId', $userId);
+$stmt->execute();
+$parties = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $parties[] = $row;
-    }
-}
-
-$conn->close();
+$conn = null;
 ?>
 
 <!DOCTYPE html>
