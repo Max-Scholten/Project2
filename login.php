@@ -54,11 +54,14 @@ $conn = null;
     <title>Home</title>
 
     <link rel="stylesheet" href="../Project2/css/login.css">
+    <script src="../Project2/js/login.js" defer></script>
 
 </head>
 
-<body>
+<body onload="startTime()">
+
     <header>Home</header>
+ 
     <?php if (isset($errorMessage)) : ?>
         <p><?php echo $errorMessage; ?></p>
     <?php endif; ?>
@@ -86,10 +89,11 @@ $conn = null;
 
     <div id="tekst">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui similique consequuntur recusandae quod veniam doloribus facere, voluptatum, laboriosam, sunt nemo provident odio esse mollitia molestiae dolorem itaque soluta nostrum nihil!</p>
+
     </div>
 
 
 </body>
-<footer></footer>
+<footer><div id="txt"></div></footer>
 
 </html>
