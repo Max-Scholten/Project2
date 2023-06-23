@@ -48,7 +48,7 @@ $conn->close();
 <html>
 <head>
     <title>Questionnaire</title>
-    <link type="stylesheet" href="../Project2/css/question.css">
+    <link rel="stylesheet" href="../Project2/css/question.css">
 </head>
 <body>
     <h2>Questionnaire</h2>
