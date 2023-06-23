@@ -8,40 +8,38 @@ if (!isset($_SESSION['userId'])) {
 
 $userId = $_SESSION['userId'];
 
-$hostname = 'localhost'; // Change this to your database server hostname
-$username = 'root'; // Change this to your database username
-$password = ''; // Change this to your database password
-$database = 'stemwijzer'; // Change this to your database name
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'stemwijzer';
 
-$conn = new mysqli($hostname, $username, $password, $database);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+try {
+    $conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     foreach ($_POST as $questionId => $answer) {
         $agree = ($answer === 'yes') ? 1 : 0;
-        $sql = "INSERT INTO userquestions (userId, questionId, agrees) VALUES ($userId, $questionId, $agree)";
-        $conn->query($sql);
+
+        $stmt = $conn->prepare("INSERT INTO userquestions (userId, questionId, agrees) VALUES (:userId, :questionId, :agree)");
+        $stmt->bindParam(':userId', $userId);
+        $stmt->bindParam(':questionId', $questionId);
+        $stmt->bindParam(':agree', $agree);
+        $stmt->execute();
     }
 
-    $conn->close();
+    $conn = null;
     header("Location: results.php");
     exit();
 }
 
-$sql = "SELECT * FROM questions";
-$results = $conn->query($sql);
-$questions = [];
+$stmt = $conn->query("SELECT * FROM questions");
+$questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-if ($results->num_rows > 0) {
-    while ($row = $results->fetch_assoc()) {
-        $questions[] = $row;
-    }
-}
-
-$conn->close();
+$conn = null;
 ?>
 
 <!DOCTYPE html>
