@@ -23,3 +23,8 @@ header{
     height: 55px;
     text-align: center;
 }
+footer{
+    grid-area: footer;
+    background-color: #0D4074;
+    height: 10vh;
+}

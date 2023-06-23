@@ -70,4 +70,5 @@ $conn = null;
         });
     </script>
 </body>
+<footer></footer>
 </html>

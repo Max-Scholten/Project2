@@ -75,4 +75,5 @@ $conn = null;
         </form>
     <?php endif; ?>
 </body>
+<footer></footer>
 </html>
