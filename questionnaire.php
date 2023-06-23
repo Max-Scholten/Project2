@@ -46,6 +46,7 @@ $conn = null;
 <html>
 <head>
     <title>Questionnaire</title>
+    <link rel="stylesheet" href="../Project2/css/question.css">
 </head>
 <body>
     <h2>Questionnaire</h2>
