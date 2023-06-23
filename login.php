@@ -58,12 +58,14 @@ $conn = null;
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Login</title>
 
     <link rel="stylesheet" href="../Project2/css/login.css">
 
 </head>
+
 <body>
     <header>Login</header>
 
@@ -74,19 +76,25 @@ $conn = null;
     <?php if (isset($successMessage)) : ?>
         <p><?php echo $successMessage; ?></p>
     <?php endif; ?>
-    <form method="POST" action="">
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-        </div>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <div>
-            <button type="submit" name="login">Login</button>
-            <button type="submit" name="register">Register</button>
-        </div>
-    </form>
+    <div id="formi">
+
+        <form method="POST" action="">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <button type="submit" name="login">Login</button>
+                <button type="submit" name="register">Register</button>
+            </div>
+        </form>
+    </div>
+
+    
 </body>
+<footer></footer>
 </html>

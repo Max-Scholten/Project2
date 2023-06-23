@@ -4,17 +4,16 @@ body{
     padding: 0px;
     background-color: rgb(240, 240, 240);
     background-image: url(../afb/2560x1440a.jpg);
+    background-size:cover;
     background-repeat: no-repeat;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: grid;
     grid-template-columns: 2fr 2fr;
-    grid-area: 
+    grid-template-areas: 
     "header header"
-    "banner h1"
-    "nav text"
-    "nav text1"
+    "formi formi"
     "footer footer";
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 2fr 2fr;
     column-gap: 7px;
     row-gap: 25px;
     
@@ -24,4 +23,15 @@ header{
     grid-area: header;
     background-color: #0D4074;
     
+}
+
+#formi{
+    grid-area: formi;
+    background-color: #0D4074;
+}
+
+footer{
+    grid-area: footer;
+    background-color: #0D4074;
+    height: 10vh;
 }
