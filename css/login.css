@@ -3,11 +3,25 @@ body{
     margin: 0px;
     padding: 0px;
     background-color: rgb(240, 240, 240);
+    background-image: url(../afb/2560x1440a.jpg);
+    background-repeat: no-repeat;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-area: 
+    "header header"
+    "banner h1"
+    "nav text"
+    "nav text1"
+    "footer footer";
+    grid-template-rows: 1fr 2fr;
+    column-gap: 7px;
+    row-gap: 25px;
     
 }
 
 header{
+    grid-area: header;
     background-color: #0D4074;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
 }
