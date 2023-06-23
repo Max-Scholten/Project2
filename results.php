@@ -54,7 +54,7 @@ $conn = null;
     <link rel="stylesheet" href="../Project2/css/results.css">
 </head>
 <body>
-    <h2>Results</h2>
+    <header>Results</header>
     <p>Username: <?php echo $_SESSION['username']; ?></p>
     <p>Total Points: <?php echo $totalPoints; ?></p>
     <p>Your Political Leaning: <?php echo ($userParty === 'None') ? 'Indeterminate' : $userParty; ?></p>

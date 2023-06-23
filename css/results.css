@@ -2,4 +2,12 @@
 body{
     background-color: rgb(87, 102, 113);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    align-items: center;
+    grid-template-areas: 
+    "header header"
+    "formi formi"
+    "footer footer";
+}
+header{
+    grid-area: header;
 }
