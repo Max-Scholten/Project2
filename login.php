@@ -67,14 +67,14 @@ $conn = null;
 
     <header>Home</header>
  
+    
+    <div id="formi">
     <?php if (isset($errorMessage)) : ?>
         <p><?php echo $errorMessage; ?></p>
     <?php endif; ?>
     <?php if (isset($successMessage)) : ?>
         <p><?php echo $successMessage; ?></p>
     <?php endif; ?>
-    <div id="formi">
-
         <form method="POST" action="">
             <h2>Login</h2>
             <div>
