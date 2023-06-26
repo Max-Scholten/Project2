@@ -66,15 +66,9 @@ $conn = null;
 <body onload="startTime()">
 
     <header>Home</header>
- 
-    
+
+
     <div id="formi">
-    <?php if (isset($errorMessage)) : ?>
-        <p><?php echo $errorMessage; ?></p>
-    <?php endif; ?>
-    <?php if (isset($successMessage)) : ?>
-        <p><?php echo $successMessage; ?></p>
-    <?php endif; ?>
         <form method="POST" action="">
             <h2>Login</h2>
             <div>
@@ -90,15 +84,25 @@ $conn = null;
                 <button type="submit" name="register">Register</button>
             </div>
         </form>
+        <?php if (isset($errorMessage)) : ?>
+            <p><?php echo $errorMessage; ?></p>
+        <?php endif; ?>
+        <?php if (isset($successMessage)) : ?>
+            <p><?php echo $successMessage; ?></p>
+        <?php endif; ?>
     </div>
 
     <div id="tekst">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui similique consequuntur recusandae quod veniam doloribus facere, voluptatum, laboriosam, sunt nemo provident odio esse mollitia molestiae dolorem itaque soluta nostrum nihil!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui similique consequuntur 
+            recusandae quod veniam doloribus facere, voluptatum, laboriosam, sunt nemo provident odio 
+            esse mollitia molestiae dolorem itaque soluta nostrum nihil!</p>
 
     </div>
 
 
 </body>
-<footer><div id="txt"></div></footer>
+<footer>
+    <div id="txt"></div>
+</footer>
 
 </html>
