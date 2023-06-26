@@ -55,13 +55,16 @@ $conn = null;
 
 <head>
     <title>Home</title>
-    <a href="account_settings.php" class="account-settings-button">Account Settings</a>
+    
     <link rel="stylesheet" href="../Project2/css/login.css">
     <script src="../Project2/js/iets.js" defer></script>
 </head>
 
 <body onload="startTime()">
-    <header>Home</header>
+    <header>
+    <div id="asettings"><a href="account_settings.php" >Account Settings</a></div>
+    Home
+    </header>
 
     <div id="formi">
         <form method="POST" action="">
