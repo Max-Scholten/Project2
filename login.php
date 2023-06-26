@@ -44,41 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errorMessage = "Error registering user: " . $stmt->errorInfo()[2];
         }
     }
-    elseif (isset($_POST['delete'])) {
-        // Account deletion functionality
-        $username = $_POST['username'];
-        $password = md5($_POST['password']);
-
-        $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
-        $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':password', $password);
-        $stmt->execute();
-
-        if ($stmt->rowCount() > 0) {
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            $userId = $row['userId'];
-
-            // Delete associated records in the userquestions table
-            $stmtDeleteQuestions = $conn->prepare("DELETE FROM userquestions WHERE userId = :userId");
-            $stmtDeleteQuestions->bindParam(':userId', $userId);
-            if (!$stmtDeleteQuestions->execute()) {
-                $errorMessage = "Error deleting associated answers: " . $stmtDeleteQuestions->errorInfo()[2];
-            } else {
-                // Delete the user
-                $stmtDeleteUser = $conn->prepare("DELETE FROM users WHERE userId = :userId");
-                $stmtDeleteUser->bindParam(':userId', $userId);
-                if ($stmtDeleteUser->execute()) {
-                    session_destroy(); // Clear the session data
-                    header("Location: login.php"); // Redirect to the login page
-                    exit();
-                } else {
-                    $errorMessage = "Error deleting account: " . $stmtDeleteUser->errorInfo()[2];
-                }
-            }
-        } else {
-            $errorMessage = "Invalid username or password";
-        }
-    }
+    
 }
 
 $conn = null;
@@ -89,7 +55,7 @@ $conn = null;
 
 <head>
     <title>Home</title>
-
+    <a href="account_settings.php" class="account-settings-button">Account Settings</a>
     <link rel="stylesheet" href="../Project2/css/login.css">
     <script src="../Project2/js/iets.js" defer></script>
 </head>
@@ -111,7 +77,6 @@ $conn = null;
             <div>
                 <button id="login" type="submit" name="login">Login</button>
                 <button id="register" type="submit" name="register">Register</button>
-                <button id="delete" type="submit" name="delete">Delete Account</button>
             </div>
         </form>
         <?php if (isset($errorMessage)) : ?>

@@ -62,6 +62,14 @@ header{
 
 
 }
+.account-settings-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+}
 
 #register{
     height: 5vh;
@@ -108,7 +116,22 @@ form{
     
     
 }
-
+#delete-form{
+    grid-area: tekst;
+    background-color: rgb(190, 190, 190);
+    text-align: center;
+    min-height: 40vh;
+    width: 40vw;
+    border: solid rgb(41, 21, 74) 5px;
+    border-radius: 35px;
+    grid-column: 3;
+    grid-row: 3 / 4; 
+    padding-top: 55px;
+    padding-left: 60px;
+    padding-right: 55px;
+    
+    
+}
 #txt{
     font-weight: bold;
     font-size: 30px;
