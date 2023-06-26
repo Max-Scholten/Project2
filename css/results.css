@@ -66,3 +66,176 @@ footer{
     height: 10vh;
     border: solid rgb(41, 21, 74) 5px;
 }
+
+
+/*@media*/
+
+/*tablet*/
+@media all and (max-width: 1280px){
+    body{
+        margin: 0px;
+        padding: 0px;
+       
+        grid-template-rows: 2fr 2fr;
+        column-gap: 7px;
+        row-gap: 25px;
+        
+    }
+
+    header{
+        
+        font-size: 35px;
+        
+        padding-top: 13px;
+        height: 7vh;
+        
+    }
+    
+    #reset{
+        height: 8vh;
+        width: 35vw;
+        font-size: 20px;
+        padding-bottom: 20px;
+        padding-top: 10px;
+        border-radius: 25px;
+        border: solid rgb(41, 21, 74) 3px;
+        color: whitesmoke;
+        background-color: #1b65af;
+    }
+
+    #bt{
+        padding-top: 10px;
+        
+    }
+
+
+    h2{
+        font-size: 45px;
+    }
+    
+   
+    #tekst{
+        grid-area: tekst;
+        background-color: rgb(190, 190, 190);
+        font-size: 30px;
+        text-align: left;
+        min-height: 55vh;
+        width: 65vw;
+        border: solid rgb(41, 21, 74) 5px;
+        border-radius: 35px;
+        grid-column: 3 ;
+        grid-row: 1 / 3;
+        margin-top: 150px;
+        padding-bottom: 134px;
+        padding-left: 25px;
+        padding-right: 55px;
+    }
+    
+    #txt{
+        font-weight: bold;
+        font-size: 25px;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding-top: 20px;
+    
+    }
+
+    footer{
+        grid-area: footer;
+        background-color: #0D4074;
+        height: 7vh;
+        border: solid rgb(41, 21, 74) 5px;
+    }
+
+}
+
+/*phone*/
+@media all and (max-width: 799px){
+    body{
+        margin: 0px;
+        padding: 0px;
+       
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        display: grid;
+        grid-template-areas: 
+        "header header header header"
+        "formi formi formi formi"
+        "tekst tekst tekst tekst"
+        "footer footer footer footer";
+        grid-template-rows: 2fr 2fr;
+        column-gap: 7px;
+        row-gap: 25px;
+        
+    }
+
+    header{
+        grid-area: header;
+        background-color: #0D4074;
+        text-align: center;
+        font-weight: bold;
+        font-size: 25px;
+        color: white;
+        padding-top: 13px;
+        height: 7vh;
+        border: solid rgb(41, 21, 74) 5px;
+    }
+
+
+   
+    #bt{
+        padding-top: 10px;
+        
+    }
+
+    h2{
+        font-size: 28px;
+    }
+    
+   
+
+    #tekst{
+        grid-area: tekst;
+        background-color: rgb(190, 190, 190);
+        font-size: 15px;
+        text-align: left;
+        min-height: 40vh;
+        width: 55vw;
+        border: solid rgb(41, 21, 74) 5px;
+        border-radius: 35px;
+        grid-column: 3 ;
+        grid-row: 1 / 3;
+        margin-top: 150px;
+        padding-bottom: 85px;
+        padding-left: 25px;
+        padding-right: 55px;
+    }
+
+    #reset{
+        height: 8vh;
+        width: 35vw;
+        font-size: 15px;
+        padding-bottom: 20px;
+        padding-top: 10px;
+        border-radius: 25px;
+        border: solid rgb(41, 21, 74) 3px;
+        color: whitesmoke;
+        background-color: #1b65af;
+    }
+
+    
+    #txt{
+        font-weight: bold;
+        font-size: 15px;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding-top: 20px;
+    
+    }
+
+    footer{
+        grid-area: footer;
+        background-color: #0D4074;
+        height: 7vh;
+        border: solid rgb(41, 21, 74) 5px;
+    }
+}

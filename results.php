@@ -22,7 +22,7 @@
             <p><?php include('Calculatour/sp.php'); ?></p>
         </div>
         <form method="post" action="login.php">
-            <div id="bt"><button type="submit" name="reset">Reset Application</button></div>
+            <div id="bt"><button id="reset" type="submit" name="reset">Reset Application</button></div>
         </form>
     </div>
    
