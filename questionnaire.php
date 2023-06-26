@@ -47,8 +47,9 @@ $conn = null;
 <head>
     <title>Questionnaire</title>
     <link rel="stylesheet" href="../Project2/css/question.css">
+    <script src="../Project2/js/iets.js" defer></script>
 </head>
-<body>
+<body onload="startTime()">
     <header>Questionnaire</header>
     <div id="formi"><form method="POST" action="">
         <?php foreach ($questions as $question) : ?>
@@ -71,5 +72,7 @@ $conn = null;
         });
     </script>
 </body>
-<footer><div id="txt"></div></footer>
+<footer>
+    <div id="txt"></div>
+</footer>
 </html>
