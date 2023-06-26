@@ -6,7 +6,9 @@ body{
     background-color: rgb(240, 240, 240);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: grid;
-
+    background-image: url(../afb/stemwijzerachtergrond.png);
+    background-size: cover;
+    background-repeat: no-repeat;
     grid-template-areas: 
     "header header header header"
     "formi formi formi formi"
