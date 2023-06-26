@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-
-
-
 $hostname = 'localhost';
 $username = 'root';
 $password = '';
@@ -47,6 +44,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errorMessage = "Error registering user: " . $stmt->errorInfo()[2];
         }
     }
+    elseif (isset($_POST['delete'])) {
+        // Account deletion functionality
+        $username = $_POST['username'];
+        $password = md5($_POST['password']);
+
+        $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $userId = $row['userId'];
+
+            // Delete associated records in the userquestions table
+            $stmtDeleteQuestions = $conn->prepare("DELETE FROM userquestions WHERE userId = :userId");
+            $stmtDeleteQuestions->bindParam(':userId', $userId);
+            if (!$stmtDeleteQuestions->execute()) {
+                $errorMessage = "Error deleting associated answers: " . $stmtDeleteQuestions->errorInfo()[2];
+            } else {
+                // Delete the user
+                $stmtDeleteUser = $conn->prepare("DELETE FROM users WHERE userId = :userId");
+                $stmtDeleteUser->bindParam(':userId', $userId);
+                if ($stmtDeleteUser->execute()) {
+                    session_destroy(); // Clear the session data
+                    header("Location: login.php"); // Redirect to the login page
+                    exit();
+                } else {
+                    $errorMessage = "Error deleting account: " . $stmtDeleteUser->errorInfo()[2];
+                }
+            }
+        } else {
+            $errorMessage = "Invalid username or password";
+        }
+    }
 }
 
 $conn = null;
@@ -60,13 +92,10 @@ $conn = null;
 
     <link rel="stylesheet" href="../Project2/css/login.css">
     <script src="../Project2/js/iets.js" defer></script>
-
 </head>
 
 <body onload="startTime()">
-
     <header>Home</header>
-
 
     <div id="formi">
         <form method="POST" action="">
@@ -79,9 +108,10 @@ $conn = null;
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <div id="bt">
-                <button type="submit" name="login" id="login">Login</button>
-                <button type="submit" name="register" id="register">Register</button>
+            <div>
+                <button type="submit" name="login">Login</button>
+                <button type="submit" name="register">Register</button>
+                <button type="submit" name="delete">Delete Account</button>
             </div>
         </form>
         <?php if (isset($errorMessage)) : ?>
@@ -93,14 +123,13 @@ $conn = null;
     </div>
 
     <div id="tekst">
-        <p>Dit is een stem wijzer. Je krijgt tien vragen gesteld, waar je ja of nee op moet beantwoorden. De partijen die wij gebruiken zijn de VVD, D66 en de SP, omdat het om de functionaliteit gaat en niet om de grote.</p>
-        <br>    
-        <p>Zodra je er klaar voor bent, log je in en maak je de vragen. Heb je nog geen account dan maak eerst een account aan. Dit doe je als volgt: Vul een gebruikersnaam in, daarna een wachtwoord. Dan druk je op <b>'Register'</b>.</p>
-
+        <p>Dit is een stemwijzer. Je krijgt tien vragen gesteld, waar je ja of nee op moet beantwoorden. De partijen die wij gebruiken zijn de VVD, D66 en de SP, omdat het om de functionaliteit gaat en niet om de grootte.</p>
+        <br>
+        <p>Zodra je er klaar voor bent, log je in en maak je de vragen. Heb je nog geen account, maak dan eerst een account aan. Dit doe je als volgt: vul een gebruikersnaam in en daarna een wachtwoord. Druk dan op <b>'Register'</b>.</p>
     </div>
 
-
 </body>
+
 <footer>
     <div id="txt"></div>
 </footer>
