@@ -251,7 +251,7 @@ footer{
     #formi{
         grid-area: formi;
         border: solid rgb(41, 21, 74) 5px;
-        min-height: 25vh;
+        min-height: 30vh;
         width: 65vw;
         border-radius: 35px;
         background-color: #0D4074;
