@@ -49,8 +49,8 @@ $conn = null;
     <link rel="stylesheet" href="../Project2/css/question.css">
 </head>
 <body>
-    <h2>Questionnaire</h2>
-    <form method="POST" action="">
+    <header>Questionnaire</header>
+    <div id="formi"><form method="POST" action="">
         <?php foreach ($questions as $question) : ?>
             <div>
                 <p><?php echo $question['text']; ?></p>
@@ -60,14 +60,16 @@ $conn = null;
                 <label for="no">No</label>
             </div>
         <?php endforeach; ?>
-        <div>
-            <button type="submit">Submit</button>
+        <div id="bt">
+            <button type="submit">Vote</button>
         </div>
     </form>
+    </div>
     <script>
         document.querySelector("form").addEventListener("submit", function() {
             document.querySelector("button[type='submit']").disabled = true;
         });
     </script>
 </body>
+<footer><div id="txt"></div></footer>
 </html>
