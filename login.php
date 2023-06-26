@@ -93,9 +93,9 @@ $conn = null;
     </div>
 
     <div id="tekst">
-        <p>Dit is een stem wijzer je krijgt tien vragen gesteld waar je ja/nee op moet beantworden de partijen die wij gebruiken zijn drie partijen omdat het om de functioneltijd gaat en niet om de grote.
+        <p>Dit is een stem wijzer. Je krijgt tien vragen gesteld, waar je ja of nee op moet beantwoorden. De partijen die wij gebruiken zijn de VVD, D66 en de SP, omdat het om de functionaliteit gaat en niet om de grote.</p>
         <br>    
-        Zodra je er klaar voor bent log in en maak de vragen heb je nog geen account dan maak eerst een account.</p>
+        <p>Zodra je er klaar voor bent, log je in en maak je de vragen. Heb je nog geen account dan maak eerst een account aan. Dit doe je als volgt: Vul een gebruikersnaam in, daarna een wachtwoord. Dan druk je op <b>'Register'</b>.</p>
 
     </div>
 
