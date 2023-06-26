@@ -14,11 +14,11 @@
         </div>
         <div>
             <h3>D66</h3>
-            <p><?php include('Calculatour/sp.php'); ?></p>
+            <p><?php include('Calculatour/d66.php'); ?></p>
         </div>
         <div>
             <h3>SP</h3>
-            <p><?php include('Calculatour/d66.php'); ?></p>
+            <p><?php include('Calculatour/sp.php'); ?></p>
         </div>
     </div>
     <form method="post" action="login.php">
