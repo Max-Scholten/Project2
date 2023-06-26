@@ -45,9 +45,9 @@ header{
     grid-row: 1 / 3;
     margin-top: 150px;
 
-    padding-bottom: 55px;
+    padding-bottom: 25px;
     padding-left: 25px;
-    padding-right: 55px;
+    padding-right: 25px;
     
 }
 
@@ -125,7 +125,7 @@ footer{
         font-size: 35px;
         color: white;
         padding-top: 13px;
-        height: 6vh;
+        height: 7vh;
         border: solid rgb(41, 21, 74) 5px;
     }
 
@@ -179,6 +179,126 @@ footer{
         font-size: 39px;
         padding-top: 0px;
     }
+
+    #tekst{
+        grid-area: tekst;
+        background-color: rgb(190, 190, 190);
+        text-align: center;
+        font-size: 30px;
+        min-height: 35vh;
+        width: 61vw;
+        border: solid rgb(41, 21, 74) 5px;
+        border-radius: 35px;
+        grid-column: 3;
+        grid-row: 3 / 4; 
+        padding-top: 55px;
+        padding-left: 60px;
+        padding-right: 55px;
+      
+    }
+    
+    #txt{
+        font-weight: bold;
+        font-size: 25px;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding-top: 25px;
+    
+    }
+
+    footer{
+        grid-area: footer;
+        background-color: #0D4074;
+        height: 7vh;
+        border: solid rgb(41, 21, 74) 5px;
+    }
+}
+
+/*phone*/
+@media all and (max-width: 799px) and (orientation: portrait){
+    body{
+        margin: 0px;
+        padding: 0px;
+        background-color: rgb(240, 240, 240);
+        background-image: url(../afb/2560x1440a.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        display: grid;
+        grid-template-areas: 
+        "header header header header"
+        "formi formi formi formi"
+        "tekst tekst tekst tekst"
+        "footer footer footer footer";
+        grid-template-rows: 2fr 2fr;
+        column-gap: 7px;
+        row-gap: 25px;
+        
+    }
+
+    header{
+        grid-area: header;
+        background-color: #0D4074;
+        text-align: center;
+        font-weight: bold;
+        font-size: 35px;
+        color: white;
+        padding-top: 13px;
+        height: 6vh;
+        border: solid rgb(41, 21, 74) 5px;
+    }
+
+    #formi{
+        grid-area: formi;
+        border: solid rgb(41, 21, 74) 5px;
+        min-height: 25vh;
+        width: 65vw;
+        border-radius: 35px;
+        background-color: #0D4074;
+        color: white;
+        text-align: center;
+        grid-column: 3 ;
+        grid-row: 1 / 3;
+        margin-top: 150px;
+    
+        padding-bottom: 55px;
+        padding-left: 25px;
+        padding-right: 55px;
+        
+    }
+
+    h2{
+        font-size: 28px;
+    }
+    
+    form{
+        font-size: 25px;
+        
+    }
+
+    #bt{
+        padding-top: 7px;
+    }
+
+    #login{
+        height: 5vh;
+        width: 15vw;
+        font-size: 15px;
+
+    
+    }
+
+    #register{
+        height: 5vh;
+        width: 20vw;
+        font-size: 15px;
+    }
+
+    input{
+        height: 2vh;
+        width: 25vw;
+    }
+
 
     #tekst{
         grid-area: tekst;
