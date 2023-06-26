@@ -51,6 +51,38 @@ header{
     
 }
 
+#login{
+    height: 5vh;
+    width: 5vw;
+    font-size: 15px;
+    border: solid rgb(41, 21, 74) 3px;
+    border-radius: 35px;
+    background-color: rgb(53, 77, 98);
+    color: whitesmoke;
+
+
+}
+
+#register{
+    height: 5vh;
+    width: 5vw;
+    font-size: 15px;
+    border: solid rgb(41, 21, 74) 3px;
+    border-radius: 35px;
+    background-color: rgb(53, 77, 98);
+    color: whitesmoke;
+}
+
+#delete{
+    height: 5vh;
+    width: 8vw;
+    font-size: 15px;
+    border: solid rgb(41, 21, 74) 3px;
+    border-radius: 35px;
+    background-color: rgb(53, 77, 98);
+    color: whitesmoke;
+}
+
 h2{
     font-size: 30px;
 }
@@ -145,6 +177,12 @@ footer{
     #register{
         height: 5vh;
         width: 15vw;
+        font-size: 25px;
+    }
+
+    #delete{
+        height: 5vh;
+        width: 25vw;
         font-size: 25px;
     }
 
@@ -274,6 +312,12 @@ footer{
     #register{
         height: 5vh;
         width: 20vw;
+        font-size: 15px;
+    }
+
+    #delete{
+        height: 5vh;
+        width: 36vw;
         font-size: 15px;
     }
 

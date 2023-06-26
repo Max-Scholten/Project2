@@ -109,9 +109,9 @@ $conn = null;
                 <input type="password" id="password" name="password" required>
             </div>
             <div>
-                <button type="submit" name="login">Login</button>
-                <button type="submit" name="register">Register</button>
-                <button type="submit" name="delete">Delete Account</button>
+                <button id="login" type="submit" name="login">Login</button>
+                <button id="register" type="submit" name="register">Register</button>
+                <button id="delete" type="submit" name="delete">Delete Account</button>
             </div>
         </form>
         <?php if (isset($errorMessage)) : ?>
