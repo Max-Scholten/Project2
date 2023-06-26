@@ -93,9 +93,9 @@ $conn = null;
     </div>
 
     <div id="tekst">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui similique consequuntur 
-            recusandae quod veniam doloribus facere, voluptatum, laboriosam, sunt nemo provident odio 
-            esse mollitia molestiae dolorem itaque soluta nostrum nihil!</p>
+        <p>Dit is een stem wijzer je krijgt tien vragen gesteld waar je ja/nee op moet beantworden de partijen die wij gebruiken zijn drie partijen omdat het om de functioneltijd gaat en niet om de grote.
+        <br>    
+        Zodra je er klaar voor bent log in en maak de vragen heb je nog geen account dan maak eerst een account.</p>
 
     </div>
 
