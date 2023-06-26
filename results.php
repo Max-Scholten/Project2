@@ -3,10 +3,11 @@
 <head>
     <title>Results</title>
     <link rel="stylesheet" href="../Project2/css/results.css">
+    <script src="../Project2/js/iets.js" defer></script>
 </head>
-<body>
+<body onload="startTime()">
     <header>Results</header>
-    <div>
+    <div id="tekst">
         <h2>Your Best Matching Party:</h2>
         <div>
             <h3>VVD</h3>
@@ -20,10 +21,11 @@
             <h3>SP</h3>
             <p><?php include('Calculatour/sp.php'); ?></p>
         </div>
+        <form method="post" action="login.php">
+            <div id="bt"><button type="submit" name="reset">Reset Application</button></div>
+        </form>
     </div>
-    <form method="post" action="login.php">
-        <button type="submit" name="reset">Reset Application</button>
-    </form>
+   
 </body>
-<footer></footer>
+<footer><div id="txt"></div></footer>
 </html>
