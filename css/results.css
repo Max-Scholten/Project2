@@ -10,7 +10,7 @@ body{
     "header header"
     "formi formi"
     "footer footer";
-    grid-template-rows: 2fr 2fr;
+    grid-template-rows:  0fr 5fr 0fr;
 
 }
 header{
@@ -25,5 +25,5 @@ header{
 footer{
     grid-area: footer;
     background-color: #0D4074;
-    height: 10vh;
+    height: 14.85vh;
 }
