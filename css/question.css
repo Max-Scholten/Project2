@@ -54,6 +54,16 @@ form{
     padding-top: 125px;
 }
 
+#vote{
+    height: 5vh;
+    width: 5vw;
+    font-size: 15px;
+    border: solid rgb(41, 21, 74) 3px;
+    border-radius: 35px;
+    background-color: rgb(53, 77, 98);
+    color: whitesmoke;
+}
+
 #bt{
     padding-top: 15px;
 }
