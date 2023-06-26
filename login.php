@@ -79,9 +79,9 @@ $conn = null;
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <div>
-                <button type="submit" name="login">Login</button>
-                <button type="submit" name="register">Register</button>
+            <div id="bt">
+                <button type="submit" name="login" id="login">Login</button>
+                <button type="submit" name="register" id="register">Register</button>
             </div>
         </form>
         <?php if (isset($errorMessage)) : ?>
