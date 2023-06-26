@@ -67,7 +67,7 @@ $conn = null;
 <?php endforeach; ?>
 
         <div id="bt">
-            <button type="submit">Vote</button>
+            <button id="vote" type="submit">Vote</button>
         </div>
     </form>
     </div>

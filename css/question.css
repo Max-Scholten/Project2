@@ -111,8 +111,20 @@ footer{
         
     }
 
+    input{
+        height: 25px;
+        width: 25px;
+    }
+
+    #vote{
+        height: 5vh;
+        width: 15vw;
+        font-size: 30px;
+    }
+
     #bt{
-        padding-top: 7px;
+        padding-top: 10px;
+        
     }
 
 
@@ -210,6 +222,22 @@ footer{
         
     }
 
+    input{
+        height: 15px;
+        width: 15px;
+    }
+
+    #vote{
+        height: 5vh;
+        width: 15vw;
+        font-size: 15px;
+    }
+
+    #bt{
+        padding-top: 10px;
+        
+    }
+
     h2{
         font-size: 28px;
     }
@@ -218,12 +246,6 @@ footer{
         font-size: 15px;
         
     }
-
-    #bt{
-        padding-top: 10px;
-    }
-
-  
 
     #tekst{
         grid-area: tekst;
