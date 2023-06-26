@@ -1,5 +1,9 @@
 * 
 body{
+    background-image: url(../afb/backgroundresults2.png);
+    background-size: 200px;
+    background-repeat: repeat;
+    background-blend-mode: normal;
     margin: 0px;
     padding: 0px;
     background-color: rgb(240, 240, 240);
