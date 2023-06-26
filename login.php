@@ -56,6 +56,7 @@ $conn = null;
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="../Project2/css/login.css">
 </head>
 <body>
     <h2>Login</h2>
