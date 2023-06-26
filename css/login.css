@@ -116,6 +116,15 @@ form{
     
     
 }
+#update{
+    height: 5vh;
+    width: 9vw;
+    font-size: 15px;
+    border: solid rgb(41, 21, 74) 3px;
+    border-radius: 35px;
+    background-color: rgb(7, 69, 5);
+    color: whitesmoke;  
+}
 #delete-form{
     grid-area: tekst;
     background-color: rgb(190, 190, 190);

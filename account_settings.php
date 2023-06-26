@@ -64,18 +64,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $conn = null;
 ?>
-
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Home</title>
+    <title>Account Settings</title>
     <link rel="stylesheet" href="../Project2/css/login.css">
     <script src="../Project2/js/iets.js" defer></script>
+    
 </head>
 
 <body onload="startTime()">
-    <header>Home</header>
+    <header>Account Settings</header>
+
+    <a href="login.php" class="account-settings-button">Login</a>
 
     <div id="formi">
         <form method="POST" action="">
@@ -100,8 +102,6 @@ $conn = null;
         <?php endif; ?>
 
     </div>
-
-    
 
     <div id="delete-form">
         <form method="POST" action="">
@@ -133,3 +133,4 @@ $conn = null;
 </footer>
 
 </html>
+
