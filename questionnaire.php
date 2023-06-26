@@ -46,10 +46,9 @@ $conn = null;
 <html>
 <head>
     <title>Questionnaire</title>
-    <link rel="stylesheet" href="../Project2/css/question.css">
 </head>
 <body>
-    <header>Questionnaire</header>
+    <h2>Questionnaire</h2>
     <form method="POST" action="">
         <?php foreach ($questions as $question) : ?>
             <div>
@@ -70,5 +69,4 @@ $conn = null;
         });
     </script>
 </body>
-<footer></footer>
 </html>
