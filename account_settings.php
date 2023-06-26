@@ -75,9 +75,10 @@ $conn = null;
 </head>
 
 <body onload="startTime()">
-    <header>Account Settings</header>
-
-    <a href="login.php" class="account-settings-button">Login</a>
+    <header>
+    <div id="asettings"><a href="login.php" class="account-settings-button">Login</a></div>
+    Account Settings
+    </header>
 
     <div id="formi">
         <form method="POST" action="">
