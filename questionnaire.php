@@ -52,15 +52,20 @@ $conn = null;
 <body onload="startTime()">
     <header>Questionnaire</header>
     <div id="formi"><form method="POST" action="">
-        <?php foreach ($questions as $question) : ?>
-            <div>
-                <p><?php echo $question['text']; ?></p>
-                <input type="radio" id="yes" name="<?php echo $question['questionId']; ?>" value="yes" required>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="<?php echo $question['questionId']; ?>" value="no" required>
-                <label for="no">No</label>
-            </div>
-        <?php endforeach; ?>
+    <?php foreach ($questions as $question) : ?>
+    <div>
+        <p><?php echo $question['text']; ?></p>
+        <label>
+            <input type="radio" name="<?php echo $question['questionId']; ?>" value="yes" required>
+            Yes
+        </label>
+        <label>
+            <input type="radio" name="<?php echo $question['questionId']; ?>" value="no" required>
+            No
+        </label>
+    </div>
+<?php endforeach; ?>
+
         <div id="bt">
             <button type="submit">Vote</button>
         </div>
