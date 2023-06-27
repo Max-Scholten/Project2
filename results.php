@@ -25,7 +25,7 @@
             <div id="bt"><button id="reset" type="submit" name="reset">Log out</button></div>
         </form>
         <form method="get" action="questionnaire.php">
-            <div id="bt"><button id="goBack" type="submit">do test again</button></div>
+            <div id="bt"><button id="goBack" type="submit">Do the test again</button></div>
         </form>
     </div>
    
