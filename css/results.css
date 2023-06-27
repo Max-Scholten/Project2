@@ -78,7 +78,17 @@ footer{
     height: 10vh;
     border: solid rgb(41, 21, 74) 5px;
 }
-
+#goBack{
+    height: 8vh;
+    width: 20vw;
+    font-size: 20px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    border-radius: 25px;
+    border: solid rgb(41, 21, 74) 3px;
+    color: whitesmoke;
+    background-color: #1b65af; 
+}
 
 /*@media*/
 

@@ -24,6 +24,9 @@
         <form method="post" action="login.php">
             <div id="bt"><button id="reset" type="submit" name="reset">Reset Application</button></div>
         </form>
+        <form method="get" action="questionnaire.php">
+            <div id="bt"><button id="goBack" type="submit">do test again</button></div>
+        </form>
     </div>
    
 </body>
