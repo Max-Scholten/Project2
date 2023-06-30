@@ -124,6 +124,17 @@ footer{
         color: whitesmoke;
         background-color: #1b65af;
     }
+    #goBack{
+        height: 8vh;
+        width: 35vw;
+        font-size: 20px;
+        padding-bottom: 20px;
+        padding-top: 10px;
+        border-radius: 25px;
+        border: solid rgb(41, 21, 74) 3px;
+        color: whitesmoke;
+        background-color: #1b65af; 
+    }
 
     #bt{
         padding-top: 10px;
@@ -252,6 +263,18 @@ footer{
         text-align: center;
         padding-top: 20px;
     
+    }
+
+    #goBack{
+        height: 8vh;
+        width: 35vw;
+        font-size: 15px;
+        padding-bottom: 20px;
+        padding-top: 10px;
+        border-radius: 25px;
+        border: solid rgb(41, 21, 74) 3px;
+        color: whitesmoke;
+        background-color: #1b65af; 
     }
 
     footer{
