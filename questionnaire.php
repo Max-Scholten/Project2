@@ -21,6 +21,11 @@ try {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Delete the user's previous answers
+    $stmt = $conn->prepare("DELETE FROM userquestions WHERE userId = :userId");
+    $stmt->bindParam(':userId', $userId);
+    $stmt->execute();
+
     foreach ($_POST as $questionId => $answer) {
         $agree = ($answer === 'yes') ? 1 : 0;
 
@@ -64,11 +69,11 @@ $conn = null;
             No
         </label>
     </div>
-<?php endforeach; ?>
+    <?php endforeach; ?>
 
-        <div id="bt">
-            <button id="vote" type="submit">Vote</button>
-        </div>
+    <div id="bt">
+        <button id="vote" type="submit">Vote</button>
+    </div>
     </form>
     </div>
     <script>
