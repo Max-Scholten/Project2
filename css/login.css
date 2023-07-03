@@ -87,7 +87,7 @@ a{
 
 #delete{
     height: 5vh;
-    width: 8vw;
+    width: 10vw;
     font-size: 15px;
     border: solid rgb(41, 21, 74) 3px;
     border-radius: 35px;
@@ -122,7 +122,7 @@ form{
 }
 #update{
     height: 5vh;
-    width: 9vw;
+    width: 25vw;
     font-size: 15px;
     border: solid rgb(41, 21, 74) 3px;
     border-radius: 35px;
@@ -349,6 +349,15 @@ footer{
         height: 5vh;
         width: 20vw;
         font-size: 15px;
+    }
+    #update{
+        height: 6vh;
+        width: 30vw;
+        font-size: 15px;
+        border: solid rgb(41, 21, 74) 3px;
+        border-radius: 35px;
+        background-color: rgb(7, 69, 5);
+        color: whitesmoke;  
     }
 
     #delete{
