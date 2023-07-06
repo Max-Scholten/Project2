@@ -52,7 +52,7 @@ $conn = null;
 <head>
     <title>Questionnaire</title>
     <link rel="stylesheet" href="../Project2/css/question.css">
-    <script src="../Project2/js/iets.js" defer></script>
+    <script src="../Project2/js/login.js" defer></script>
 </head>
 <body onload="startTime()">
     <header>Questionnaire</header>

@@ -70,7 +70,7 @@ $conn = null;
 <head>
     <title>Account Settings</title>
     <link rel="stylesheet" href="../Project2/css/login.css">
-    <script src="../Project2/js/iets.js" defer></script>
+    <script src="../Project2/js/login.js" defer></script>
     
 </head>
 

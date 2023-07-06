@@ -3,7 +3,7 @@
 <head>
     <title>Results</title>
     <link rel="stylesheet" href="../Project2/css/results.css">
-    <script src="../Project2/js/iets.js" defer></script>
+    <script src="../Project2/js/login.js" defer></script>
 </head>
 <body onload="startTime()">
     <header>Results</header>
