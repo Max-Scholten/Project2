@@ -76,7 +76,7 @@ $conn = null;
 
 <body onload="startTime()">
     <header>
-    <div id="asettings"><a href="login.php" class="account-settings-button">Login</a></div>
+    <div id="asettings"><a href="login.php" class="account-settings-button">Login</a></div> 
     Account Settings
     </header>
 
