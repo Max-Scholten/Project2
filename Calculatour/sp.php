@@ -20,7 +20,7 @@ try {
     die("Connection failed: " . $e->getMessage());
 }
 
-$partyId = 3; // Set the party ID for SP
+$partyId = 3; // Party ID for SP
 
 // Get the party's positions for the questions
 $stmt = $conn->prepare("SELECT partyquestions.agrees FROM partyquestions
